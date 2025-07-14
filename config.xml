@@ -2,7 +2,7 @@
 <widget android-versionCode="51000" id="com.moodle.moodlemobile" ios-CFBundleVersion="5.1.0.0" version="5.1.0" versionCode="51000" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>TalkLine School</name>
     <description>TalkLine School official app</description>
-    <author email="info@talkline.ir" href="http://talkline.ir">capacitor.config.ts</author>
+    <author email="info@talkline.ir" href="https://talkline.ir">Talkline Development Team</author>
     <content src="index.html" />
     <access origin="*" />
     <access launch-external="yes" origin="tel:*" />
