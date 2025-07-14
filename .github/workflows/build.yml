@@ -15,35 +15,31 @@ jobs:
 
     - name: Install dependencies
       run: |
-        cd talkline.school.app
         npm install
         npm install -g @ionic/cli cordova-res
 
     - name: Build Ionic App
       run: |
-        cd talkline.school.app
         ionic build
         npx cap sync
         npx cap add android
 
     - name: Update package name
       run: |
-        cd talkline.school.app
         sed -i 's/com.moodle.moodlemobile/com.niniz.babyapp/g' android/app/src/main/AndroidManifest.xml
         sed -i 's/com.moodle.moodlemobile/com.niniz.babyapp/g' android/app/build.gradle
 
     - name: Generate icons
       run: |
-        cd talkline.school.app
         cordova-res android --skip-config --copy
 
     - name: Build Android APK
       run: |
-        cd talkline.school.app/android
+        cd android
         ./gradlew assembleRelease
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
         name: moodleapp-apk
-        path: talkline.school.app/android/app/build/outputs/apk/release/app-release.apk
+        path: android/app/build/outputs/apk/release/app-release.apk
