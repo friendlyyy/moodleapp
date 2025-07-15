@@ -24,10 +24,6 @@ jobs:
         npm install -g @ionic/cli cordova-res @capacitor/cli
         npm install @capacitor/android
 
-    - name: Prepare Moodle App files
-      run: |
-        npm run prepare:mobile
-
     - name: Build Ionic App
       run: |
         ionic build
