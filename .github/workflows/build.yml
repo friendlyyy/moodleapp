@@ -21,19 +21,19 @@ jobs:
     - name: Install dependencies
       run: |
         npm install
-        npm install -g @ionic/cli cordova-res
-
+        npm install -g @ionic/cli cordova-res @capacitor/cli
 
     - name: Build Ionic App
       run: |
-        ionic build
+        npm run build || ionic build
         npx cap sync
         npx cap add android
 
     - name: Update package name
       run: |
-        sed -i 's/com.moodle.moodlemobile/com.niniz.babyapp/g' android/app/src/main/AndroidManifest.xml
-        sed -i 's/com.moodle.moodlemobile/com.niniz.babyapp/g' android/app/build.gradle
+        sed -i 's/com.moodle.moodlemobile/com.talkline.schoolapp/g' android/app/src/main/AndroidManifest.xml
+        sed -i 's/com.moodle.moodlemobile/com.talkline.schoolapp/g' android/app/build.gradle
+
 
     - name: Generate icons
       run: |
