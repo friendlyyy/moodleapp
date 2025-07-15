@@ -25,7 +25,8 @@ jobs:
 
     - name: Build Ionic App
       run: |
-        npm run build || ionic build
+        ionic build
+        npx cap init "TalkLine" "com.talkline.schoolapp" --web-dir=www --npm-client=npm
         npx cap sync
         npx cap add android
 
