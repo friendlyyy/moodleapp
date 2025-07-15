@@ -23,6 +23,7 @@ jobs:
         npm install
         npm install -g @ionic/cli cordova-res @capacitor/cli
         npm install @capacitor/android
+        npm uninstall cordova-plugin-moodleapp
 
 
     - name: Build Ionic App
